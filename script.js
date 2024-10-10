@@ -36,14 +36,15 @@ formulario.addEventListener("submit", (e) => {
 
   requestAnimationFrame(() => {
    item.classList.remove("adicionando");
-   window.localStorage.setItem(listaTarefas.length, tarefa);
+   window.localStorage.setItem(listaTarefas.length - 1, tarefa);
   });
   document.querySelector("#tarefa").value = "";
 
   // excluir tarefa
   botao.addEventListener("click", () => {
    botao.parentElement.classList.add("removendo");
-
+   const indexBtn = botao.parentElement.innerText;
+   localStorage.removeItem(listaTarefas.indexOf(indexBtn));
    botao.parentElement.addEventListener("transitionend", () => {
     botao.parentElement.remove();
    });
