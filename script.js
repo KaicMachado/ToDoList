@@ -9,7 +9,7 @@ formulario.addEventListener("submit", (e) => {
 
  // verifico se essa tarefa já foi adicionada
  if (listaTarefas.includes(tarefa)) {
-  const adicionarMesmoAssim = confirm("Está tarefa ja foi adicionada");
+  confirm("Está tarefa ja foi adicionada");
   document.querySelector("#tarefa").value = "";
  } else {
   // seleciono o texto do input e coloco no array
@@ -36,6 +36,7 @@ formulario.addEventListener("submit", (e) => {
 
   requestAnimationFrame(() => {
    item.classList.remove("adicionando");
+   window.localStorage.setItem(listaTarefas.length, tarefa);
   });
   document.querySelector("#tarefa").value = "";
 
