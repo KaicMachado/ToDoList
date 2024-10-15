@@ -8,10 +8,9 @@ window.onload = () => {
    const chave = localStorage.key(i);
    const valor = localStorage.getItem(chave);
    listaTarefas.push(valor);
-   listaTarefas.forEach((i) => {
-    const botao = criarTarefa(valor);
-    excluirTarefa(botao);
-   });
+
+   const botao = criarTarefa(valor);
+   excluirTarefa(botao);
   }
  }
  criaTxtDeTarefasRestantes(listaTarefas);
